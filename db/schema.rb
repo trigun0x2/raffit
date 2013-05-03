@@ -11,7 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130504220331) do
+ActiveRecord::Schema.define(:version => 20130504220335) do
+
+  create_table "items", :force => true do |t|
+    t.integer  "user"
+    t.string   "name"
+    t.decimal  "price"
+    t.integer  "quantity"
+    t.integer  "description"
+    t.integer  "tickthres_min"
+    t.integer  "tickthres_max"
+    t.integer  "tickbuy_min"
+    t.integer  "tickbuy_max"
+    t.decimal  "shipping"
+    t.date     "closeDate"
+    t.integer  "ticket"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "tickets", :force => true do |t|
+    t.integer  "user"
+    t.integer  "item"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                        :null => false
@@ -21,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20130504220331) do
     t.datetime "updated_at",                   :null => false
     t.string   "remember_me_token"
     t.datetime "remember_me_token_expires_at"
+    t.integer  "rep"
   end
 
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
