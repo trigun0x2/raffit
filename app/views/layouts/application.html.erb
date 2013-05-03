@@ -13,7 +13,7 @@
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  	<title><%= full_title(yield(:title)) %></title>
 
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
@@ -26,8 +26,7 @@
 	    <!-- Title Area -->
 	    <li class="name">
 	      <h1><a href="#">Raffit</a></h1>
-	    </li>
-	    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+	    </li>	   
 	    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 		<section class="top-bar-section">
 		<ul class="right">
