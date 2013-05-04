@@ -14,7 +14,7 @@ gem 'turbolinks'
 gem 'bootstrap-sass', '2.1'
 gem 'jquery-rails'
 gem 'sorcery'
-
+gem 'zurb-foundation'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '2.11.0'
