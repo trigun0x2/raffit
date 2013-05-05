@@ -38,6 +38,28 @@ img.resize{
   top: 55px;
 }
 
+.integer{
+  width: 90px;
+  margin-right: 25px;
+  float:left;
+}
+
+.item_price{
+  width: 90px;
+}
+
+.item_close_date{
+  width:90px;
+}
+
+form {
+  width:500px;
+}
+
+input[type="file"]{
+  width:auto;
+}
+
 li{
   margin:0;
 }

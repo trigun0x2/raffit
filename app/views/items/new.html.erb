@@ -14,15 +14,15 @@
     </div>
   <% end %>
   <%= f.input :name %>
-  <div id="uploadmore"><input type="file" name="upload[img1]" accept="image/*"></div>
-  <input type="button" id="addimg" value="Add another image">
+  <div id="uploadmore">Image 1: <input type="file" name="upload[img1]" accept="image/*"></div>
+  <input type="button" id="addimg" value="Add another image">  <div style="clear: both;"><br /></div>
   <%= f.input :price %>
-  <%= f.input :quantity %>
+  <%= f.input :quantity %>      <div style="clear: both;"></div>
   <%= f.input :description %>
   <%= f.input :tickthres_min %>
   <%= f.input :tickthres_max %>
   <%= f.input :tickbuy_min %>
-  <%= f.input :tickbuy_max %>
+  <%= f.input :tickbuy_max %> <div style="clear: both;"></div>
   <%= f.input :shipping %>
   <%= f.input :close_date %>
   <%= f.button :submit %>
@@ -33,7 +33,7 @@
   $('#addimg').click(function() {
     num++;
     if (num <= max) {
-      $('#uploadmore').append("<br /><input type=\"file\" name=\"upload[img" + num + "]\" accept=\"image/*\">");
+      $('#uploadmore').append("<br />Image " + num + ": <input type=\"file\" name=\"upload[img" + num + "]\" accept=\"image/*\">");
       if (num >= 5)
         $('#addimg').hide();
     }
