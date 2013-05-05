@@ -20,7 +20,12 @@ class UsersController < ApplicationController
     end
     @user = User.find(params[:id])
     @rep = Rep.sum(:vote, :conditions => {:user_id => @user.id}) + 1000
-    @curpos = Rep.where(:voter_id => current_user.id, :user_id => @user.id)[0].vote
+    rep = Rep.where(:voter_id => current_user.id, :user_id => @user.id)
+    if rep.length != 0
+      @curpos = rep[0].vote
+    else
+      @curpos = 0
+    end
   end
 
   def profile
