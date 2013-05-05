@@ -19,7 +19,6 @@ gem 'simple_form'
 gem 'will_paginate', '~> 3.0'
 gem 'gravatar_image_tag'
 
-
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '2.11.0'
