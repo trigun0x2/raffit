@@ -1,0 +1,6 @@
+$('.numtick').fadeOut(function(){
+	var numticks = $(this).html();
+	var newnum = parseInt(numticks)+1;
+	console.log(newnum);
+	$(this).html(newnum).fadeIn();
+});
