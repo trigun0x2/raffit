@@ -14,6 +14,7 @@ gem 'turbolinks'
 gem 'bootstrap-sass', '2.1'
 gem 'jquery-rails'
 gem 'sorcery'
+gem 'zurb-foundation'
 gem 'simple_form'
 gem 'will_paginate', '~> 3.0'
 
