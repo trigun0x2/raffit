@@ -1,0 +1,4 @@
+<% provide(:title, "User Profile") %>
+
+<h1><%= @user.email %></h1> 
+<%= gravatar_image_tag(@user.email, :gravatar => { :size => 150 }) %>

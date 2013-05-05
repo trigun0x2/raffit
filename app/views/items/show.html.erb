@@ -1,5 +1,9 @@
 <% provide(:title, @item.name) %>
 <h1><%= @item.name %></h1>
-<b>Price:</b> <%= @item.price %>
-<b>Quantity:</b> <%= @item.quantity %>
-<b>Description:</b> <%= @item.description %>
+<p><b>Price:</b> <%= @item.price %></p>
+<p><b>Quantity:</b> <%= @item.quantity %></p>
+<p><b>Description:</b> <%= @item.description %></p>
+<p><b>Shipping:</b> <%= @item.shipping %></p>
+<p><b>Close Date:</b> <%= @item.close_date %></p>
+<p><b>Max - Min Tickets In Total:</b> <%= @item.tickthres_min %> - <%= @item.tickthres_max %></p>
+<p><b>Max - Min Tickets Allowed per Person:</b> <%= @item.tickbuy_min %> - <%= @item.tickbuy_max %></p>

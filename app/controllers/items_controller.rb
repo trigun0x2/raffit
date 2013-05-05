@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
     @item = Item.new(params[:item])
     if @item.save
       	respond_to do |format|
-		    format.html { redirect_to item_url }
+		    format.html { redirect_to @item }
 		    format.js
   		end
 
@@ -23,6 +23,10 @@ class ItemsController < ApplicationController
 
   def list
   	@items = Item.paginate(:page => params[:page], :per_page => 10)
+  end
+
+  def buyticket
+    @ticket = Ticket.new
   end
 
 end

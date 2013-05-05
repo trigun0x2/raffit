@@ -17,6 +17,7 @@ gem 'sorcery'
 gem 'simple_form'
 gem 'will_paginate', '~> 3.0'
 gem 'zurb-foundation'
+gem 'gravatar_image_tag'
 
 group :development, :test do
   gem 'sqlite3'
