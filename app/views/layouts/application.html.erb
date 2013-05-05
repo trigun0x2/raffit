@@ -32,8 +32,10 @@
 	    </ul>   
 		<section class="top-bar-section">
 			<ul class="right">
+				<% if current_user %>
 				<li class="credits">Credits: <%= current_user.credits %></li>
 				<li class="divider"></li>
+				<% end %>
 				<li class="has-dropdown drop">
 					<span class="navtitle">Navigation</span>
 					<ul class="dropdown">

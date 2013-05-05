@@ -107,6 +107,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id]) 
     user.credits = 10000
     user.save
+    return user
   end
   
   helper_method :random_num
