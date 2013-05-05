@@ -11,4 +11,13 @@ class Photo < ActiveRecord::Base
     @entry = Photo.new(:item_id => id, :file => name)
     @entry.save
   end
+
+  def self.get(id)
+  	photos = Array.new
+  	dbp = Photo.where(:item_id => id)
+  	dbp.each do |photo|
+  	  photos.push(photo.file)
+  	end
+  	return photos
+  end
 end
