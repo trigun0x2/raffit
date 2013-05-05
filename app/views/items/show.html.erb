@@ -30,13 +30,7 @@
 <p><b>Max - Min Tickets Allowed per Person:</b> <%= @item.tickbuy_min %> - <%= @item.tickbuy_max %></p>
 <br />
 <% if @item.close_date <= Date.today %>
-    <p><b>Winning ID:</b>
-    <% if random_num(@item.id) != nil %>
-        <%= random_num(@item.id) %>
-    <% else %>
-        No tickets bought!
-    <% end %>
-    </p>
+    <p><b>Winning ID:</b> <%= random_num(@item.id) %></p>
 <% end %>
 
 <% if current_user.id == 1 %>
