@@ -4,7 +4,7 @@
 <% @items.each do |p| %>
 <tr>
 <td>
-<b><%= link_to p.name, "items/#{p.id}" %></b>
+<b><%= link_to p.name, p %></b>
 </td>
 <td>
 <%= p.price %>

@@ -1,7 +1,6 @@
-$('h1').fadeOut();
-
 $('.numtick').fadeOut(function(){
 	var numticks = $(this).html();
 	var newnum = parseInt(numticks)+1;
-	$(this).value(newnum).fadeIn();
-	});
+	console.log(newnum);
+	$(this).html(newnum).fadeIn();
+});

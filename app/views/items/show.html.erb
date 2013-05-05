@@ -3,7 +3,7 @@
 
 <%= button_to "Buy Ticket", {:controller => :items, :action => :buyticket, :id => params[:id]}, {:class => "button", :method => :put, remote: true  }  %>
 <% if @ticket.length != 0 %>
-<span class="success label">You currently have <%=  pluralize(@ticket.length,'ticket') %>.</span>
+<span class="success label">You currently have <div class="numtick"><%= @ticket.length %></div> <%=  ('ticket').pluralize %>.</span>
 </p>
 <% end %>
 <p><b>Price:</b> <%= @item.price %></p>
