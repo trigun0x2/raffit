@@ -14,3 +14,15 @@ img.resize{
   background-size: 10px;
   font-size: 14px;
 }
+
+.homeimage{
+	display: -webkit-flex;
+	-webkit-flex-direction: row;
+
+	
+}
+
+.homeone{
+
+		-webkit-flex: 1;
+}

@@ -2,7 +2,7 @@
 <h1><%= @item.name %></h1>
 
 <% if @item.close_date <= Date.today %>
-    <input value="Closed!" class="button" style="background-color: #777; border-color: transparent; width: 150px;">
+    <input value="Closed!" class="button disabled" style="background-color: #777; border-color: transparent; width: 150px;">
 <% else %>
     <%= button_to "Buy Ticket", {:controller => :items, :action => :buyticket, :id => params[:id]}, {:class => "button", :method => :put, remote: true  , :confirm => "Confirm Buying a Ticket"}  %>
     <% if @ticket.length != 0 %>
@@ -10,9 +10,11 @@
     </p>
     <% end %>
 <% end %>
+<ul class="clearing-thumbs" data-clearing>
 <% @photos.each do |photo| %>
-	<img src="<%= "#{ActionController::Base.relative_url_root}/images/#{photo}" %>" />
+	<li><a href="#{ActionController::Base.relative_url_root}/images/#{photo}"><img src="<%= "#{ActionController::Base.relative_url_root}/images/#{photo}" %>" /></a></li>
 <% end %>
+</ul>
 <p><b>Price:</b> <%= @item.price %></p>
 <p><b>Quantity:</b> <%= @item.quantity %></p>
 <p><b>Description:</b> <%= @item.description %></p>
