@@ -9,6 +9,7 @@ Raffit::Application.routes.draw do
   resources :sessions
   resources :items do 
     put :buyticket, :on => :collection
+    put :random_num1, :on => :collection
   end
   root :to => "home#index"
 
