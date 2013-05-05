@@ -50,10 +50,16 @@ class ItemsController < ApplicationController
   end
 
   def random_num
-    sum = ActiveRecord::Base.connection.execute("SELECT COUNT(*) FROM tickets WHERE item_id='" + params[:id] + "'")
-    random = rand(sum[0][0])
-    win = ActiveRecord::Base.connection.execute("SELECT id FROM tickets WHERE item_id='" + params[:id] + "' LIMIT 1 OFFSET " + random.to_s)
-    return win[0][0]
+    test = ActiveRecord::Base.connection.execute("SELECT winning_ticket FROM items WHERE id='" + params[:id] + "'")
+    if (test[0][0] != nil)
+      return test[0][0]
+    else
+      sum = ActiveRecord::Base.connection.execute("SELECT COUNT(*) FROM tickets WHERE item_id='" + params[:id] + "'")
+      random = rand(sum[0][0])
+      win = ActiveRecord::Base.connection.execute("SELECT id FROM tickets WHERE item_id='" + params[:id] + "' LIMIT 1 OFFSET " + random.to_s)
+      ActiveRecord::Base.connection.execute("UPDATE items SET winning_ticket=" + win[0][0].to_s + " WHERE id=" + params[:id])
+      return win[0][0]
+    end
   end
   
   helper_method :random_num
