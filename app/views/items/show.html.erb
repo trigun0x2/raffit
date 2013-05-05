@@ -1,5 +1,6 @@
 <% provide(:title, @item.name) %>
 <h1><%= @item.name %></h1>
+<h4><%= link_to @seller, users_path+"/#{@item.user_id}" %></h4>
 
 <% if @item.close_date <= Date.today %>
     <input value="Closed!" class="button disabled" style="background-color: #777; border-color: transparent; width: 150px;">

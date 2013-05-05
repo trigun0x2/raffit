@@ -14,7 +14,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])    
+    if params[:id] != current_user.id.to_s ######CHANGE TO ==
+      redirect_to profile_path
+    end
+    @user = User.find(params[:id])
   end
 
   def profile
