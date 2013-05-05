@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   validates_presence_of :email, :password_confirmation
   validates_uniqueness_of :email
 
-  has_many :items, :tickets
+  has_many :items
+  has_many :tickets
 
 end

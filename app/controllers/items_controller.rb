@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+	before_filter :require_login
   def new
     @item = Item.new
   end
@@ -15,4 +16,13 @@ class ItemsController < ApplicationController
       render :new
     end
   end
+
+  def show
+  	@item = Item.find(params[:id])  	
+  end
+
+  def list
+  	@items = Item.paginate(:page => params[:page], :per_page => 10)
+  end
+
 end

@@ -15,6 +15,8 @@ gem 'bootstrap-sass', '2.1'
 gem 'jquery-rails'
 gem 'sorcery'
 gem 'simple_form'
+gem 'will_paginate', '~> 3.0'
+
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '2.11.0'

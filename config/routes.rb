@@ -2,10 +2,12 @@ Raffit::Application.routes.draw do
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
+  get "items" => "items#list", :as => "allitems"
   resources :users
   resources :sessions
   resources :items
   root :to => "items#new"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
