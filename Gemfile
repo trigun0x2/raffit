@@ -16,6 +16,7 @@ gem 'jquery-rails'
 gem 'sorcery'
 gem 'simple_form'
 gem 'will_paginate', '~> 3.0'
+gem 'zurb-foundation', '~> 2.2'
 
 group :development, :test do
   gem 'sqlite3'

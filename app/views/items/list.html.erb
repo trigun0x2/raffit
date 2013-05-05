@@ -1,8 +1,15 @@
 <% provide(:title, 'All Items') %>
-
+<h1>All Current Items</h1>
+<table>
 <% @items.each do |p| %>
-<h2><%= p.name %></h2>
+<tr>
+<td>
+<b><%= link_to p.name, "items/#{p.id}" %></b>
+</td>
+<td>
 <%= p.price %>
+</td>
+</tr>
 <% end %>
-
+</table>
 <%= will_paginate @items %>
