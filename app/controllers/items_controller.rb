@@ -31,7 +31,7 @@ class ItemsController < ApplicationController
   def show
   	@item = Item.find(params[:id])  
     @ticket = Ticket.find_all_by_user_id(current_user.id, :conditions => [ "item_id = ?", @item.id])
-    @photos = Photo.get(@item.id)
+    @photos = Photo.getByID(@item.id)
   end
 
   def list

@@ -12,7 +12,16 @@ class Photo < ActiveRecord::Base
     @entry.save
   end
 
-  def self.get(id)
+  def self.get(*query)
+  	photos = Array.new
+  	dbp = Photo.find(*query)
+  	dbp.each do |photo|
+  	  photos.push(photo.file)
+  	end
+  	return photos
+  end
+
+  def self.getByID(id)
   	photos = Array.new
   	dbp = Photo.where(:item_id => id)
   	dbp.each do |photo|
@@ -20,4 +29,5 @@ class Photo < ActiveRecord::Base
   	end
   	return photos
   end
+
 end
