@@ -32,7 +32,7 @@
 	    </ul>   
 		<section class="top-bar-section">
 			<ul class="right">
-				<li class="has-dropdown">
+				<li class="has-dropdown drop">
 					<span class="navtitle">Navigation</span>
 					<ul class="dropdown">
 						<li><%= link_to "View Items", items_path %></li>
@@ -41,11 +41,11 @@
 		    	</li>
 				<li class="divider"></li>
 			    <% if current_user %>
-			    	<li class="has-dropdown">
-			        <span class="loginUser">Logged in as <%= current_user.email %></span>
-			        <ul class="dropdown">
-			        	<li><%= link_to "Log out", logout_path %></li>
-			        </ul>
+			    	<li class="has-dropdown drop">
+                        <span><%= current_user.email %></span>
+                        <ul class="dropdown">
+                            <li><%= link_to "Log out", logout_path %></li>
+                        </ul>
 			    	</li>
 			    <% else %>
 			        <li><%= link_to "Sign up", signup_path %></li>
