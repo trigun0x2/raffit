@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130505075422) do
+ActiveRecord::Schema.define(:version => 20130505084618) do
 
   create_table "items", :force => true do |t|
     t.integer  "user_id"
@@ -37,6 +37,14 @@ ActiveRecord::Schema.define(:version => 20130505075422) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "reps", :force => true do |t|
+    t.integer  "voter_id"
+    t.integer  "user_id"
+    t.integer  "vote"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "tickets", :force => true do |t|
     t.integer  "user_id"
     t.integer  "item_id"
@@ -45,14 +53,13 @@ ActiveRecord::Schema.define(:version => 20130505075422) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                                          :null => false
+    t.string   "email",                        :null => false
     t.string   "crypted_password"
     t.string   "salt"
-    t.datetime "created_at",                                     :null => false
-    t.datetime "updated_at",                                     :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
     t.string   "remember_me_token"
     t.datetime "remember_me_token_expires_at"
-    t.integer  "rep",                          :default => 1000
     t.integer  "credits"
     t.string   "provider"
     t.string   "uid"

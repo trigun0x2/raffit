@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
   def create
     upload = params[:upload]
     @item = Item.new(params[:item])
+    @item['user_id'] = current_user.id
     if @item.save
 
         # insert all applicable images into db
@@ -32,6 +33,7 @@ class ItemsController < ApplicationController
   	@item = Item.find(params[:id])  
     @ticket = Ticket.find_all_by_user_id(current_user.id, :conditions => [ "item_id = ?", @item.id])
     @photos = Photo.getByID(@item.id)
+    @seller = User.find(@item.user_id).email
   end
 
   def list

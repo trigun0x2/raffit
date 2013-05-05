@@ -44,7 +44,9 @@
 				<li class="divider"></li>
 			    <% if current_user %>
 			    	<li class="has-dropdown">
-			        <span class="loginUser">Logged in as <%= current_user.email %></span>
+			        <span class="loginUser">
+			        	<%= link_to "Logged in as #{current_user.email}", profile_path %>
+			        </span>
 			        <ul class="dropdown">
 			        	<li><%= link_to "Profile", '/profile' %></li>
 			        	<li><%= link_to "Log out", logout_path %></li>

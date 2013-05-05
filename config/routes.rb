@@ -5,7 +5,9 @@ Raffit::Application.routes.draw do
   get "items" => "items#list", :as => "allitems"
   get "profile" => "users#profile", :as => "profile"
 
-  resources :users
+  resources :users do
+    put :rate, :on => :collection
+  end
   resources :sessions
   resources :items do 
     put :buyticket, :on => :collection
