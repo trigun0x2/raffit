@@ -21,7 +21,7 @@
 	<% @photos.each do |photo| %>
 		<div class="homeone">
 			<%= link_to photo do %>
-				<%= image_tag('images/#{photo}') %>
+				<%= image_tag("/public/images/#{photo}") %>
 			<% end %>
 		</div>
 	<% end %>
