@@ -77,6 +77,7 @@ class ItemsController < ApplicationController
         c1 = Item.find(id)#ActiveRecord::Base.connection.execute("UPDATE items SET winning_ticket=" + win[0][0].to_s + " WHERE id=" + params[:id])
         c1.winning_ticket = win
         c1.save
+        UserMailer.winner(User.find(Ticket.find(win).user_id).email).deliver
         return User.find(Ticket.find(win).user_id).email
       end
     end
