@@ -16,9 +16,9 @@
 <% end %>
 </p>
 <p>
-<div class="homeimage">
+<div class="homeimage1">
 <% @photos.each do |photo| %>
-	<div class="homeone"><%= link_to image_tag("/images/#{photo}", :size => "300x300") ,"/images/#{photo}" ,:rel => "lightbox"%></div>
+	<div class="homeone1"><%= link_to image_tag("/images/#{photo}", :size => "300x300") ,"/images/#{photo}" ,:rel => "lightbox"%></div>
 <% end %>
 </div>
 </p>
@@ -36,14 +36,18 @@
 <% end %>
 
 <% if current_user.id == 1 %>
-	<p>Winning Ticket: <%= current_user.email %></p>
+<button class="admin"> Admin Panel </button>
+<div class="adminpanel">
+	<p>Winning Ticket: <%= @item.winning_ticket %></p>
 	<%= button_to "Generate", {:action => :random_num1, :id => params[:id]}, {:class => "button", :method => :put , remote: true , :confirm => "Confirm Generate Winning Ticket"}  %>
     <p>
         <%= button_to "Give Money", {:action => :givemoney, :id => params[:id]}, {:class => "button", :method => :put , remote: true}  %>
     </p>
+</div>
 <% end %>
 
-<div id="dialog" title="Insufficient Funds">
-  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
-</div>
-
+<script type="text/javascript">
+    $('.admin').click(function(){
+        $('.adminpanel').slideToggle();
+    });
+</script>

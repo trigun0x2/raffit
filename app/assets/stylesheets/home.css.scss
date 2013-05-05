@@ -64,6 +64,9 @@ li{
   margin:0;
 }
 
+.homeimage1{
+  display: -webkit-flex;
+}
 /*.homeimage{
   text-align: center;
   display: -webkit-flex;
@@ -80,6 +83,9 @@ li{
   justify-content: center; 
 }*/
 
+.homeone1{
+  -webkit-flex:1;
+}
 .homeone{
    position: relative;
   float: left;

@@ -20,7 +20,9 @@
 
 	<% @photos.each do |photo| %>
 		<div class="homeone">
-			<img src="<%= "#{ActionController::Base.relative_url_root}/images/#{photo}" %>" />
+			<%= link_to photo do %>
+				<%= image_tag('images/#{photo}') %>
+			<% end %>
 		</div>
 	<% end %>
 
@@ -42,4 +44,4 @@ $(function(){
     },700)
   })
 });
-  </script>
+</script>
