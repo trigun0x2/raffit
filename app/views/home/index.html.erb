@@ -21,7 +21,7 @@
 	<% @photos.each do |photo| %>
 		<div class="homeone">
 			<%= link_to item_path(photo.item_id) do %>
-				<%= image_tag("images/#{photo.file}") %>
+				<%= image_tag("/images/#{photo.file}") %>
 			<% end %>
 		</div>
 	<% end %>
