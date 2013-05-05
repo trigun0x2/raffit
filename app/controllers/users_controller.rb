@@ -19,11 +19,13 @@ class UsersController < ApplicationController
     end
     @user = User.find(params[:id])
     @rep = Rep.sum(:vote, :conditions => {:user_id => @user.id}) + 1000
+    @curpos = Rep.where(:voter_id => current_user.id, :user_id => @user.id)[0].vote
   end
 
   def profile
     @user = User.find(current_user.id)
     @rep = Rep.sum(:vote, :conditions => {:user_id => @user.id}) + 1000
+    @items = Item.where(:winning_ticket => nil, :user_id => current_user.id).paginate(:page => params[:page], :per_page => 10)
   end
 
   def rate

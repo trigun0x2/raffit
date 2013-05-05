@@ -3,8 +3,54 @@
 <h1><%= @user.email %></h1> 
 <%= gravatar_image_tag(@user.email, :gravatar => { :size => 150 }) %>
 <br /><br />
-Reputation: <%= @rep %>
+<h3>Reputation: <span id="rep"><%= @rep %></span></h3>
 <br /><br />
-<%= button_to "Thumbs down", {:action => :rate, :user_id => @user.id, :rating => -1}, {:class => "button", :method => :put , remote: true } %>
-<%= button_to "Neutral", {:action => :rate, :user_id => @user.id, :rating => 0}, {:class => "button", :method => :put , remote: true } %>
-<%= button_to "Thumbs Up", {:action => :rate, :user_id => @user.id, :rating => 1}, {:class => "button", :method => :put , remote: true } %>
+
+<div style="float:left;">
+<%= button_to "Thumbs down", {:action => :rate, :user_id => @user.id, :rating => -1}, {:class => "button down", :method => :put , remote: true } %>
+</div>
+<div style="float:left;">
+<%= button_to "Neutral", {:action => :rate, :user_id => @user.id, :rating => 0}, {:class => "button middle", :method => :put , remote: true } %>
+</div>
+<div style="float:both;">
+<%= button_to "Thumbs Up", {:action => :rate, :user_id => @user.id, :rating => 1}, {:class => "button up", :method => :put , remote: true } %>
+</div>
+
+<script type="text/javascript">
+<% if @curpos == -1 %>
+	down = <%= @rep %>
+	middle = <%= @rep + 1 %>
+	up = <%= @rep + 2 %>
+
+	$('.down').addClass("alert");
+<% elsif @curpos == 1 %>
+	down = <%= @rep - 2 %>
+	middle = <%= @rep - 1 %>
+	up = <%= @rep %>
+
+	$('.up').addClass("alert");
+<% else %>
+	down = <%= @rep - 1 %>
+	middle = <%= @rep %>
+	up = <%= @rep + 1 %>
+
+	$('.middle').addClass("alert");
+<% end %>
+
+	$('.down').click(function() {
+		$('.alert').removeClass('alert');
+		$('.down').addClass('alert');
+		$('#rep').html(down);
+	});
+	$('.up').click(function() {
+		$('.alert').removeClass('alert');
+		$('.up').addClass('alert');
+		$('#rep').html(up);
+	});
+	$('.middle').click(function() {
+		$('.alert').removeClass('alert');
+		$('.middle').addClass('alert');
+		$('#rep').html(middle);
+	});
+
+</script>
