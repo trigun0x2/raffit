@@ -5,8 +5,6 @@ class User < ActiveRecord::Base
 
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
-  validates_presence_of :email
+  validates_presence_of :email, :password_confirmation
   validates_uniqueness_of :email
-
-  has_many :item, :ticket
 end
