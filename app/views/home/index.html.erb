@@ -10,6 +10,14 @@
 		<div class="row">
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan urna in mi dictum in sodales lacus imperdiet. Nunc id tellus odio. Sed non placerat eros. Duis blandit enim in tortor lacinia at molestie ante aliquet. Sed quam leo, condimentum in ultrices eget, consequat in erat. Donec hendrerit elementum lobortis. Mauris accumsan nunc a turpis accumsan quis mattis enim fringilla. Suspendisse a odio ac metus ornare auctor et vitae diam. In cursus sagittis ornare. Duis convallis venenatis dolor ac tincidunt. Suspendisse luctus nunc vitae arcu pulvinar ac euismod purus molestie. Aliquam et elit diam.
 		</div>
-		
+
 	</div>
+
+</div>
+<div class="homeimage">
+	<% @photos.each do |f| %>
+		<div class="homeone">
+			<img src="<%= "#{ActionController::Base.relative_url_root}/images/#{photo}" %>" />
+		</div>
+	<% end %>
 </div>
