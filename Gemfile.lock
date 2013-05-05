@@ -178,4 +178,4 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.0.3)
   will_paginate (~> 3.0)
-  zurb-foundation (~> 2.2)
+  zurb-foundation
