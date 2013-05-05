@@ -1,6 +1,6 @@
 class Item < ActiveRecord::Base
 
-  attr_accessible :close_date, :description, :name, :price, :quantity, :shipping, :tickbuy_max, :tickbuy_min, :ticket, :tickthres_max, :tickthres_min, :winning_ticket
+  attr_accessible :close_date, :description, :name, :price, :quantity, :shipping, :tickbuy_max, :tickbuy_min, :ticket, :tickthres_max, :tickthres_min, :winning_ticket, :credits
 
   belongs_to :users
   has_many :tickets

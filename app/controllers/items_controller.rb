@@ -35,20 +35,30 @@ class ItemsController < ApplicationController
   end
 
   def list
-  	@items = Item.paginate(:page => params[:page], :per_page => 10)
+  	@items = Item.where(:winning_ticket => nil).paginate(:page => params[:page], :per_page => 10)
   end
 
   def buyticket
     @ticket = Ticket.new(user_id: current_user.id, item_id: params[:id])
-    if @ticket.save
-        respond_to do |format|
-          format.html { redirect_to @item }
-          format.js
-        end
+    @user = User.find(current_user.id)
+    @item = Item.find(params[:id]) 
+    page.call :confirm, "asldfjkad"
+    if @user.credits < @item.price
+      page.call :confirm, "asldfjkad"
+      respond_to do |format|
+            format.html { redirect_to @item, :notice => "Not enough credits!"}
+      end
+      redirect_to @item, :notice => "Not enough credits!"
     else
-      render :buyticket
+      if @ticket.save
+          respond_to do |format|
+            format.html { redirect_to @item }
+            format.js
+          end
+      else
+        render :buyticket
+      end
     end
-
   end
 
   def random_num(id)

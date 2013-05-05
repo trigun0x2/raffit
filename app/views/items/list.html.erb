@@ -1,15 +1,17 @@
 <% provide(:title, 'All Items') %>
 <h1>All Current Items</h1>
 <table>
-<% @items.each do |p| %>
-<tr>
-<td>
-<b><%= link_to p.name, p %></b>
-</td>
-<td>
-<%= p.price %>
-</td>
-</tr>
-<% end %>
+	<% @items.each do |p| %>
+		<% unless p.winning_ticket %>
+			<tr>
+			<td>
+			<b><%= link_to p.name, p %></b>
+			</td>
+			<td>
+			<%= p.price %>
+			</td>
+			</tr>
+		<% end %>
+	<% end %>
 </table>
 <%= will_paginate @items %>

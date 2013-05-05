@@ -32,6 +32,8 @@
 	    </ul>   
 		<section class="top-bar-section">
 			<ul class="right">
+				<li class="credits">Credits: <%= current_user.credits %></li>
+				<li class="divider"></li>
 				<li class="has-dropdown drop">
 					<span class="navtitle">Navigation</span>
 					<ul class="dropdown">
@@ -44,7 +46,7 @@
 			    	<li class="has-dropdown">
 			        <span class="loginUser">Logged in as <%= current_user.email %></span>
 			        <ul class="dropdown">
-			        	<li><%= link_to "Profile", current_user %></li>
+			        	<li><%= link_to "Profile", '/profile' %></li>
 			        	<li><%= link_to "Log out", logout_path %></li>
 			        </ul>
 			    	</li>
