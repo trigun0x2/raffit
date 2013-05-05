@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130505040737) do
+ActiveRecord::Schema.define(:version => 20130505064846) do
 
   create_table "items", :force => true do |t|
     t.integer  "user_id"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20130505040737) do
     t.string   "remember_me_token"
     t.datetime "remember_me_token_expires_at"
     t.integer  "rep"
+    t.integer  "credits"
   end
 
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
