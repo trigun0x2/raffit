@@ -53,14 +53,16 @@ class ItemsController < ApplicationController
   end
 
   def random_num
-    test = ActiveRecord::Base.connection.execute("SELECT winning_ticket FROM items WHERE id='" + params[:id] + "'")
-    if (test[0][0] != nil)
-      return test[0][0]
+    test = Item.find(params[:id])#find()ActiveRecord::Base.connection.execute("SELECT winning_ticket FROM items WHERE id='" + params[:id] + "'")
+    if (test.winning_ticket != nil)
+      return test.winning_ticket
     else
-      sum = ActiveRecord::Base.connection.execute("SELECT COUNT(*) FROM tickets WHERE item_id='" + params[:id] + "'")
+      sum = Ticket.where(:item_id => params[:id]).count#ActiveRecord::Base.connection.execute("SELECT COUNT(*) FROM tickets WHERE item_id='" + params[:id] + "'")
       random = rand(sum[0][0])
-      win = ActiveRecord::Base.connection.execute("SELECT id FROM tickets WHERE item_id='" + params[:id] + "' LIMIT 1 OFFSET " + random.to_s)
-      ActiveRecord::Base.connection.execute("UPDATE items SET winning_ticket=" + win[0][0].to_s + " WHERE id=" + params[:id])
+      win = Ticket.limit(1).offset(random).find(params[:id]).id#ActiveRecord::Base.connection.execute("SELECT id FROM tickets WHERE item_id='" + params[:id] + "' LIMIT 1 OFFSET " + random.to_s)
+      c1 = Item.find(params[:id])#ActiveRecord::Base.connection.execute("UPDATE items SET winning_ticket=" + win[0][0].to_s + " WHERE id=" + params[:id])
+      c1.winning_ticket = win[0][0]
+      c1.save
       return win[0][0]
     end
   end
