@@ -36,7 +36,7 @@
 <% end %>
 
 <% if current_user.id == 1 %>
-	<p>Winning Ticket: <%= @item.winning_ticket %></p>
+	<p>Winning Ticket: <%= current_user.email %></p>
 	<%= button_to "Generate", {:action => :random_num1, :id => params[:id]}, {:class => "button", :method => :put , remote: true , :confirm => "Confirm Generate Winning Ticket"}  %>
     <p>
         <%= button_to "Give Money", {:action => :givemoney, :id => params[:id]}, {:class => "button", :method => :put , remote: true}  %>
