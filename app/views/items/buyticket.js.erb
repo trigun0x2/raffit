@@ -4,4 +4,10 @@ $('.numtick').fadeOut(function(){
 	$(this).html(newnum).fadeIn();
 });
 
+$('.coolcredits').fadeOut(function(){
+	var numticks = $('.price').html();
+	var numticks2 = $(this).html();
+	var newnum = parseInt(numticks2) - parseInt(numticks);
+	$(this).html(newnum).fadeIn();
+});
 console.log('A');

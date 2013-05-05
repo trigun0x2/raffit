@@ -1,0 +1,23 @@
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  padding-right: 30px;
+  padding-left: 30px;
+  border-top: 1px solid darkgrey;
+  margin-right: 100px;
+  margin-left: 100px;
+  a {
+    color: "gray";
+  }  
+  small { 
+    float: left; 
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+      }
+    }
+  }

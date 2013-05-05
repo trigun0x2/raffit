@@ -18,6 +18,7 @@ gem 'sorcery'
 gem 'simple_form'
 gem 'will_paginate', '~> 3.0'
 gem 'gravatar_image_tag'
+gem 'jquery-ui-rails'
 
 group :development, :test do
   gem 'sqlite3'

@@ -27,13 +27,16 @@
 		<ul class="title-area">
 	    <!-- Title Area -->
 	    <li class="name">
-	      <h1><%= link_to "Raffit", root_path %></a></h1>
+	      <h1 style= "font-size: 35px"><%= link_to "Raffit", root_path %></a></h1>
 	    </li>	
 	    </ul>   
 		<section class="top-bar-section">
+			<ul class="left">
+				<li class="notificationdata"></li>
+			</ul>
 			<ul class="right">
 				<% if current_user %>
-				<li class="credits">Credits: <%= current_user.credits %></li>
+				<li class="credits">Credits: <span class="coolcredits"><%= current_user.credits %></span></li>
 				<li class="divider"></li>
 				<% end %>
 				<li class="has-dropdown drop">
@@ -71,5 +74,6 @@
     <%= yield %>
 	</div>
 	</div>
+	<%= render 'layouts/footer' %>
   </body>
 </html>

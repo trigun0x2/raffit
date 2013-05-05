@@ -45,13 +45,14 @@ class ItemsController < ApplicationController
     @user = User.find(current_user.id)
     @item = Item.find(params[:id]) 
 
-    if @user.credits < @item.price
-      page.call :confirm, "asldfjkad"
+    if (@user.credits - @item.price) < 0 
       respond_to do |format|
             format.html { redirect_to @item, :notice => "Not enough credits!"}
       end
-      redirect_to @item, :notice => "Not enough credits!"
     else
+      newcredits = @user.credits - @item.price
+      @user.update_attributes(credits: newcredits)
+      @user.save
       if @ticket.save
           respond_to do |format|
             format.html { redirect_to @item }

@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 img.resize{
     width: 100%;
     height: auto;
@@ -41,14 +42,44 @@ li{
   margin:0;
 }
 
-.homeimage{
-	display: -webkit-flex;
-	-webkit-flex-direction: row;
-
-	
-}
+/*.homeimage{
+  text-align: center;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center; 
+}*/
 
 .homeone{
+   position: relative;
+  float: left;
+  width: 300px;
+  height: auto;
+  background: #fff;
+  margin: 0 10px 10px 0;
+  padding-top: 25px;
+  opacity:0;
+  text-align: center;
+  font-size: 3em;
+  color: #333;
+    
 
-		-webkit-flex: 1;
 }
+ul.left{
+  background-color: #111111;
+}
+.notificationdata{
+  margin-left: 400px;
+  font-size: 35px;
+  color: #00a6fc;
+  background-color: #111111;
+}
+

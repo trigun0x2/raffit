@@ -61,6 +61,8 @@ ActiveRecord::Schema.define(:version => 20130505102659) do
     t.string   "remember_me_token"
     t.datetime "remember_me_token_expires_at"
     t.integer  "credits",                      :default => 100
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"

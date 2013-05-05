@@ -1,7 +1,4 @@
-$('h1').fadeOut();
+$('.notificationdata').html('Insufficient Funds').delay(1000);
+$('.credits').animate({backgroundColor: "red"}).animate({backgroundColor: "#333333"}).animate({backgroundColor: "red"}).animate({backgroundColor: "#333333"}).animate({backgroundColor: "red"}).animate({backgroundColor: "#333333"});
+$('.notificationdata').fadeOut();
 
-$('.numtick').fadeOut(function(){
-	var numticks = $(this).html();
-	var newnum = parseInt(numticks)+1;
-	$(this).value(newnum).fadeIn();
-	});

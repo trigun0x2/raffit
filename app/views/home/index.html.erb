@@ -2,7 +2,7 @@
 <div class="row">
 	
 	<div class="small-6 columns">
-
+		
 			<img class="resize" src="http://www.oregonlottery.org/images/About/PressCenter/PressKits/4th_july_raffle_logo.jpg">
 
 	</div>
@@ -16,10 +16,30 @@
 
 </div>
 <hr>
-<div class="homeimage">
+<h3>Recent Items</h3>
+
 	<% @photos.each do |photo| %>
 		<div class="homeone">
 			<img src="<%= "#{ActionController::Base.relative_url_root}/images/#{photo}" %>" />
 		</div>
 	<% end %>
-</div>
+
+
+<script type="text/javascript">
+$(function(){
+  $.easing.def = 'easeOutBack';
+
+  $('.homeone').each(function(i){
+    time=200+(100*i)
+    icon=Math.floor((Math.random()*16));
+    $(this).css({
+      'top':'-200px',
+      'left':'-200px',
+    }).delay(time).animate({
+      'opacity':'1',
+      'top':'0',
+      'left':'0'
+    },700)
+  })
+});
+  </script>

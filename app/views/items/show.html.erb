@@ -10,7 +10,7 @@
     <%= button_to "Buy Ticket", {:action => :buyticket, :id => params[:id]}, {:class => "button", :method => :put , remote: true , :confirm => "Confirm Buying a Ticket"}  %>
 
     <% if @ticket.length != 0 %>
-    <span class="success label">You currently have <span class="numtick"><%= @ticket.length %></span> <%=  ('ticket').pluralize %>.</span>
+    <span class="success label" style="font-size: 27px;">You currently have <span class="numtick"><%= @ticket.length %></span> <%=  ('ticket').pluralize %>.</span>
     </p>
     <% end %>
 <% end %>
@@ -23,7 +23,7 @@
 </div>
 </p>
 
-<p><b>Price:</b> <%= @item.price %></p>
+<p><b>Price:</b> <span class="price"><%= @item.price %></span></p>
 <p><b>Quantity:</b> <%= @item.quantity %></p>
 <p><b>Description:</b> <%= @item.description %></p>
 <p><b>Shipping:</b> <%= @item.shipping %></p>
@@ -42,4 +42,8 @@
         <%= button_to "Give Money", {:action => :givemoney, :id => params[:id]}, {:class => "button", :method => :put , remote: true}  %>
     </p>
 <% end %>
+
+<div id="dialog" title="Insufficient Funds">
+  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+</div>
 
