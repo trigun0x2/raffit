@@ -1,5 +1,6 @@
 <% provide(:title, @item.name) %>
 <h1><%= @item.name %></h1>
+<p>
 <h4><%= link_to @seller, users_path+"/#{@item.user_id}" %></h4>
 
 <% if @item.winning_ticket %>
@@ -13,14 +14,14 @@
     </p>
     <% end %>
 <% end %>
-
-<ul class="clearing-thumbs" data-clearing>
-
+</p>
+<p>
+<div class="homeimage">
 <% @photos.each do |photo| %>
-	<li><a href="#{ActionController::Base.relative_url_root}/images/#{photo}"><img src="<%= "#{ActionController::Base.relative_url_root}/images/#{photo}" %>" /></a></li>
+	<div class="homeone"><%= link_to image_tag("/images/#{photo}", :size => "300x300") ,"/images/#{photo}" ,:rel => "lightbox"%></div>
 <% end %>
-</ul>
-
+</div>
+</p>
 
 <p><b>Price:</b> <%= @item.price %></p>
 <p><b>Quantity:</b> <%= @item.quantity %></p>
@@ -37,5 +38,8 @@
 <% if current_user.id == 1 %>
 	<p>Winning Ticket: <%= @item.winning_ticket %></p>
 	<%= button_to "Generate", {:action => :random_num1, :id => params[:id]}, {:class => "button", :method => :put , remote: true , :confirm => "Confirm Generate Winning Ticket"}  %>
+    <p>
+        <%= button_to "Give Money", {:action => :givemoney, :id => params[:id]}, {:class => "button", :method => :put , remote: true}  %>
+    </p>
 <% end %>
 
