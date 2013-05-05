@@ -1,3 +1,5 @@
+
+
 <h1>Post an Item</h1>
 
 <%= simple_form_for(@item, :html => {:class => 'form-horizontal', :multipart => true}) do |f| %>
@@ -12,7 +14,8 @@
     </div>
   <% end %>
   <%= f.input :name %>
-  <input type="file" name="upload[img1]" accept="image/*">
+  <div id="uploadmore"><input type="file" name="upload[img1]" accept="image/*"></div>
+  <input type="button" id="addimg" value="Add another image">
   <%= f.input :price %>
   <%= f.input :quantity %>
   <%= f.input :description %>
@@ -24,3 +27,16 @@
   <%= f.input :close_date %>
   <%= f.button :submit %>
 <% end %>
+
+<script type="text/javascript">
+  var num = 1, max = 5;
+  $('#addimg').click(function() {
+    console.log("Abc");
+    num++;
+    if (num <= max) {
+      $('#uploadmore').append("<br /><input type=\"file\" name=\"upload[img" + num + "]\" accept=\"image/*\">");
+      if (num >= 5)
+        $('#addimg').hide();
+    }
+  });
+</script>

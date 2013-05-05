@@ -10,17 +10,19 @@ class ItemsController < ApplicationController
     if @item.save
 
         # insert all applicable images into db
-        i = 1
-        until upload["img#{i}"].nil? do
-          Photo.upload(@item.id, upload["img#{i}"])
-          i += 1
+        unless upload.nil?
+          i = 1
+          until upload["img#{i}"].nil? do
+            Photo.upload(@item.id, upload["img#{i}"])
+            i += 1
+          end
         end
         #
 
       	respond_to do |format|
   		    format.html { redirect_to @item }
   		    format.js
-  		  end
+    		end
     else
       render :new
     end
@@ -29,6 +31,7 @@ class ItemsController < ApplicationController
   def show
   	@item = Item.find(params[:id])  
     @ticket = Ticket.find_all_by_user_id(current_user.id, :conditions => [ "item_id = ?", @item.id])
+    @photos = Photo.get(@item.id)
   end
 
   def list
