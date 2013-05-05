@@ -42,7 +42,7 @@ class ItemsController < ApplicationController
     @ticket = Ticket.new(user_id: current_user.id, item_id: params[:id])
     @user = User.find(current_user.id)
     @item = Item.find(params[:id]) 
-    page.call :confirm, "asldfjkad"
+
     if @user.credits < @item.price
       page.call :confirm, "asldfjkad"
       respond_to do |format|
@@ -98,6 +98,13 @@ class ItemsController < ApplicationController
         return win
       end
     end
+  end
+
+  def givemoney
+    user = current_user
+    @item = Item.find(params[:id]) 
+    user.credits = 10000
+    user.save
   end
   
   helper_method :random_num
