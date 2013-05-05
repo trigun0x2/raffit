@@ -8,17 +8,17 @@ class ItemsController < ApplicationController
     @item = Item.new(params[:item])
     if @item.save
       	respond_to do |format|
-		    format.html { redirect_to @item }
-		    format.js
-  		end
-
+  		    format.html { redirect_to @item }
+  		    format.js
+  		  end
     else
       render :new
     end
   end
 
   def show
-  	@item = Item.find(params[:id])  	
+  	@item = Item.find(params[:id])  
+    @ticket = Ticket.find_all_by_user_id(current_user.id, :conditions => [ "item_id = ?", @item.id])
   end
 
   def list
@@ -26,7 +26,17 @@ class ItemsController < ApplicationController
   end
 
   def buyticket
-    @ticket = Ticket.new
+    @ticket = Ticket.new(user_id: current_user.id, item_id: params[:id])
+    @item = Item.find(params[:id]) 
+    if @ticket.save
+        respond_to do |format|
+          format.html { redirect_to @item }
+          format.js
+        end
+    else
+      render :buyticket
+    end
+
   end
 
 end

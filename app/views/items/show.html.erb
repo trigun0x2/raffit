@@ -1,5 +1,11 @@
 <% provide(:title, @item.name) %>
 <h1><%= @item.name %></h1>
+
+<%= button_to "Buy Ticket", {:controller => :items, :action => :buyticket, :id => params[:id]}, {:class => "button", :method => :put, remote: true  }  %>
+<% if @ticket.length != 0 %>
+<span class="success label">You currently have <%=  pluralize(@ticket.length,'ticket') %>.</span>
+</p>
+<% end %>
 <p><b>Price:</b> <%= @item.price %></p>
 <p><b>Quantity:</b> <%= @item.quantity %></p>
 <p><b>Description:</b> <%= @item.description %></p>
