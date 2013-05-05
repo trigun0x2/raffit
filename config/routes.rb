@@ -4,7 +4,8 @@ Raffit::Application.routes.draw do
   get "signup" => "users#new", :as => "signup"
   resources :users
   resources :sessions
-  root :to => "home#index"
+  resources :items
+  root :to => "items#new"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

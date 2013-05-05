@@ -21,31 +21,38 @@
   </head>
 
   <body>
+  	
 	<nav class="top-bar">
+		<div class="contain-to-grid">
 		<ul class="title-area">
 	    <!-- Title Area -->
 	    <li class="name">
 	      <h1><a href="#">Raffit</a></h1>
-	    </li>	   
+	    </li>	
+	    </ul>   
 	    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 		<section class="top-bar-section">
-		<ul class="right">
-		    <% if current_user %>
-		        <li>Logged in as <%= current_user.email %></li>
-		        <li><%= link_to "Log out", logout_path %></li>
-		    <% else %>
-		        <li><%= link_to "Sign up", signup_path %></li>
-		        <li><%= link_to "Log in", login_path  %></li>
-		    <% end %>
-		</ul>
-	</section>
+			<ul class="right">
+			    <% if current_user %>
+			        <li>Logged in as <%= current_user.email %></li>
+			        <li><%= link_to "Log out", logout_path %></li>
+			    <% else %>
+			        <li><%= link_to "Sign up", signup_path %></li>
+			        <li><%= link_to "Log in", login_path  %></li>
+			    <% end %>
+			</ul>
+		</section>
+		</div>
 	</nav>
 
+	<div class="row">
+  	<div class="large-12 columns">
 	<% flash.each do |name, msg| %>
       <%= content_tag :div, msg, :id => "flash_#{name}" %>
     <% end %>
     <%= yield %>
-
+	</div>
+	</div>
     
     <%= javascript_include_tag "application" %>
   </body>
