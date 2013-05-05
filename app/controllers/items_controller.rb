@@ -10,17 +10,19 @@ class ItemsController < ApplicationController
     if @item.save
 
         # insert all applicable images into db
-        i = 1
-        until upload["img#{i}"].nil? do
-          Photo.upload(@item.id, upload["img#{i}"])
-          i += 1
+        unless upload.nil?
+          i = 1
+          until upload["img#{i}"].nil? do
+            Photo.upload(@item.id, upload["img#{i}"])
+            i += 1
+          end
         end
         #
 
       	respond_to do |format|
-		    format.html { redirect_to @item }
-		    format.js
-  		end
+  		    format.html { redirect_to @item }
+  		    format.js
+    		end
 
     else
       render :new
