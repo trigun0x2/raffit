@@ -5,7 +5,7 @@
     <ignored path="raffit.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/home.css.scss" changelist="f7d88910-faad-4212-a051-8edca175fa31" time="1367722335169" ignored="false" />
-    <file path="/show.html.erb" changelist="f7d88910-faad-4212-a051-8edca175fa31" time="1367732572679" ignored="false" />
+    <file path="/show.html.erb" changelist="f7d88910-faad-4212-a051-8edca175fa31" time="1367736552873" ignored="false" />
     <file path="/items_controller.rb" changelist="f7d88910-faad-4212-a051-8edca175fa31" time="1367734105724" ignored="false" />
     <file path="/item.rb" changelist="f7d88910-faad-4212-a051-8edca175fa31" time="1367730755093" ignored="false" />
     <file path="/routes.rb" changelist="f7d88910-faad-4212-a051-8edca175fa31" time="1367732379589" ignored="false" />
@@ -28,19 +28,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/items/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="20" selection-start="563" selection-end="563" vertical-scroll-proportion="-7.464286">
-              <folding />
+            <state line="4" column="113" selection-start="215" selection-end="215" vertical-scroll-proportion="0.13793103">
+              <folding>
+                <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="items_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="items_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/items_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="8" selection-start="870" selection-end="870" vertical-scroll-proportion="0.507772">
+            <state line="44" column="80" selection-start="1037" selection-end="1037" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -61,8 +63,8 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/home.css.scss" />
         <option value="$PROJECT_DIR$/app/models/item.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/views/items/show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/items_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/items/show.html.erb" />
       </list>
     </option>
   </component>
@@ -687,17 +689,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/items/show.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/items_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="20" selection-start="563" selection-end="563" vertical-scroll-proportion="-7.464286">
+        <state line="44" column="80" selection-start="1037" selection-end="1037" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/items_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/items/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="8" selection-start="870" selection-end="870" vertical-scroll-proportion="0.507772">
-          <folding />
+        <state line="4" column="113" selection-start="215" selection-end="215" vertical-scroll-proportion="0.13793103">
+          <folding>
+            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
