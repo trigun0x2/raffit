@@ -9,7 +9,7 @@ Raffit::Application.routes.draw do
   resources :items do 
     put :buyticket, :on => :collection
   end
-  root :to => "items#new"
+  root :to => "home#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
