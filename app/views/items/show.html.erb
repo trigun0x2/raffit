@@ -7,3 +7,7 @@
 <p><b>Close Date:</b> <%= @item.close_date %></p>
 <p><b>Max - Min Tickets In Total:</b> <%= @item.tickthres_min %> - <%= @item.tickthres_max %></p>
 <p><b>Max - Min Tickets Allowed per Person:</b> <%= @item.tickbuy_min %> - <%= @item.tickbuy_max %></p>
+<br />
+<% if @item.close_date < Date.today %>
+    <p><b>Winning ID:</b> <%= random_num  %></p>
+<% end %>
