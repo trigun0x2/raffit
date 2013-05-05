@@ -3,7 +3,7 @@ Raffit::Application.routes.draw do
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
   get "items" => "items#list", :as => "allitems"
-  # get "/items/:id" => "items#show", :as => "allitems"
+  
   resources :users
   resources :sessions
   resources :items
