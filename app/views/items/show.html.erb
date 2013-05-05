@@ -1,8 +1,16 @@
 <% provide(:title, @item.name) %>
 <h1><%= @item.name %></h1>
 <p>
+    <div class="row">
+<div class="large-4 columns">
 <h4>Seller: <%= link_to @seller, users_path+"/#{@item.user_id}" %></h4>
-
+<p>Tickets Bought: <%= @ticketsold.length %> | Chance of Winning: <%= (1.to_f/@ticketsold.length*100).round(2) %>%</p>
+</div>
+<div class="large-7 columns">
+    <p><b>Price:</b> <span class="price"><%= @item.price %></span></p>
+    <p><b>Close Date:</b> <%= @item.close_date %></p>
+</div>
+</div>
 <% if @item.winning_ticket %>
     <input value="Closed!" class="button disabled" style="background-color: #777; border-color: transparent; width: 150px;">
 <% else %>
@@ -23,19 +31,20 @@
 </div>
 </p>
 
-<p><b>Price:</b> <span class="price"><%= @item.price %></span></p>
+
 <p><b>Quantity:</b> <%= @item.quantity %></p>
 <p><b>Description:</b> <%= @item.description %></p>
 <p><b>Shipping:</b> <%= @item.shipping %></p>
-<p><b>Close Date:</b> <%= @item.close_date %></p>
 <p><b>Max - Min Tickets In Total:</b> <%= @item.tickthres_min %> - <%= @item.tickthres_max %></p>
 <p><b>Max - Min Tickets Allowed per Person:</b> <%= @item.tickbuy_min %> - <%= @item.tickbuy_max %></p>
 <br />
-<div id="number2" class="count"></div>
+
+<!-- <p><div id="number2" class="count"></div></p> -->
+<p>
 <% if @item.close_date <= Date.today %>
     <p><b>Winning ID:</b> <%= random_num(@item.id) %></p>
 <% end %>
-
+</p>
 <% if current_user.id == 1 %>
 <button class="admin"> Admin Panel </button>
 <div class="adminpanel">
@@ -46,38 +55,40 @@
     </p>
 </div>
 <% end %>
+
 <script type="text/javascript">
-  counts = {};
+//   counts = {};
 
-  function format_number(text){
-    return text.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
-  };
+//   function format_number(text){
+//     return text.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+//   };
 
-  function magic_number(element_name, value) {
-    var elem = $(element_name);
-    var current = counts[element_name] || 0;
-    $({count: current}).animate({count: value}, {
-        duration: 100,
-        step: function() {
-            elem.text(format_number(String(parseInt(this.count))));
-        }});
-    counts[element_name] = value;
-  };
+//   function magic_number(element_name, value) {
+//     var elem = $(element_name);
+//     var current = counts[element_name] || 0;
+//     $({count: current}).animate({count: value}, {
+//         duration: 100,
+//         step: function() {
+//             elem.text(format_number(String(parseInt(this.count))));
+//         }});
+//     counts[element_name] = value;
+//   };
 
-  function update() {
-    magic_number("#number2", Math.floor(Math.random() * 100001));
-  };
+//   function update() {
+//     magic_number("#number2", Math.floor(Math.random() * <%= @ticketsold.length %>));
+//   };
 
-  $(function() {
-      var intervalID = setInterval(function() {
-          update()
-      }, 100);
-      setTimeout(function() {
-          clearInterval(intervalID);
-      }, 4000);
-  });
-</script>
-<style>#number2{font-size:500%;}.total{width:100%;}.label{color:#6aa135;font-size:24px;padding-top:10px;padding-bottom:10px;font-family:Georgia,"Times New Roman",Times,serif;font-style:italic;}.count{text-shadow:0 -1px 0 #72a441;color:#8cce5b;font-weight:700;}#position{display:table-cell;vertical-align:middle;text-align:center;}</style>
+//   $(function() {
+//       var intervalID = setInterval(function() {
+//           update()
+//       }, 100);
+//       setTimeout(function() {
+//           clearInterval(intervalID);
+//       }, 4000);
+//   });
+// </script>
+<style>/*#number2{font-size:500%;}.total{width:100%;}.label{color:#6aa135;font-size:24px;padding-top:10px;padding-bottom:10px;font-family:Georgia,"Times New Roman",Times,serif;font-style:italic;}.count{text-shadow:0 -1px 0 #72a441;color:#8cce5b;font-weight:700;}#position{display:table-cell;vertical-align:middle;text-align:center;}*/</style>
+
 <script type="text/javascript">
     $('.admin').click(function(){
         $('.adminpanel').slideToggle();

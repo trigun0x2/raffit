@@ -34,6 +34,7 @@ class ItemsController < ApplicationController
     @ticket = Ticket.find_all_by_user_id(current_user.id, :conditions => [ "item_id = ?", @item.id])
     @photos = Photo.getByID(@item.id)
     @seller = User.find(@item.user_id).email
+    @ticketsold = Ticket.find_all_by_item_id(@item.id)
   end
 
   def list
