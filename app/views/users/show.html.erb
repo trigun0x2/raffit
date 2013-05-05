@@ -2,3 +2,9 @@
 
 <h1><%= @user.email %></h1> 
 <%= gravatar_image_tag(@user.email, :gravatar => { :size => 150 }) %>
+<br /><br />
+Reputation: <%= @rep %>
+<br /><br />
+<%= button_to "Thumbs down", {:action => :rate, :user_id => @user.id, :rating => -1}, {:class => "button", :method => :put , remote: true } %>
+<%= button_to "Neutral", {:action => :rate, :user_id => @user.id, :rating => 0}, {:class => "button", :method => :put , remote: true } %>
+<%= button_to "Thumbs Up", {:action => :rate, :user_id => @user.id, :rating => 1}, {:class => "button", :method => :put , remote: true } %>

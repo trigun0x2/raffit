@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20130505084618) do
   create_table "reps", :force => true do |t|
     t.integer  "voter_id"
     t.integer  "user_id"
-    t.boolean  "vote"
+    t.integer  "vote"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
