@@ -60,7 +60,7 @@ class ItemsController < ApplicationController
       sum = Ticket.where(:item_id => params[:id]).count#ActiveRecord::Base.connection.execute("SELECT COUNT(*) FROM tickets WHERE item_id='" + params[:id] + "'")
       random = rand(sum[0][0])
       win = Ticket.limit(1).offset(random).find(params[:id]).id#ActiveRecord::Base.connection.execute("SELECT id FROM tickets WHERE item_id='" + params[:id] + "' LIMIT 1 OFFSET " + random.to_s)
-      c1 = Item.find(:id => params[:id])#ActiveRecord::Base.connection.execute("UPDATE items SET winning_ticket=" + win[0][0].to_s + " WHERE id=" + params[:id])
+      c1 = Item.find(params[:id])#ActiveRecord::Base.connection.execute("UPDATE items SET winning_ticket=" + win[0][0].to_s + " WHERE id=" + params[:id])
       c1.winning_ticket = win[0][0]
       c1.save
       return win[0][0]
