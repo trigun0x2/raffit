@@ -1,0 +1,7 @@
+<% provide(:title, "My Profile") %>
+
+<h1><%= @user.email %></h1> 
+<%= gravatar_image_tag(@user.email, :gravatar => { :size => 150 }) %>
+Reputation: <%= @user.rep %>
+<br />
+Edit button maybe?

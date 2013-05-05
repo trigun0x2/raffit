@@ -15,7 +15,7 @@
 
 </div>
 <div class="homeimage">
-	<% @photos.each do |f| %>
+	<% @photos.each do |photo| %>
 		<div class="homeone">
 			<img src="<%= "#{ActionController::Base.relative_url_root}/images/#{photo}" %>" />
 		</div>
