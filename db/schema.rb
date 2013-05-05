@@ -11,18 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20130505003402) do
-=======
 ActiveRecord::Schema.define(:version => 20130505040737) do
->>>>>>> b6fc34fce13a5f749bb67384c2bf91a49ead292a
 
   create_table "items", :force => true do |t|
     t.integer  "user_id"
     t.string   "name"
     t.decimal  "price"
     t.integer  "quantity"
-    t.integer  "description"
+    t.string   "description"
     t.integer  "tickthres_min"
     t.integer  "tickthres_max"
     t.integer  "tickbuy_min"
