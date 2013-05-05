@@ -3,5 +3,21 @@
 <h1><%= @user.email %></h1> 
 <%= gravatar_image_tag(@user.email, :gravatar => { :size => 150 }) %>
 <br /><br />
-Reputation: <%= @rep %>
+<h3>Reputation: <%= @rep %></h3>
 <br /><br />
+<h1>Your shit</h1>
+<table>
+	<% @items.each do |p| %>
+		<% unless p.winning_ticket %>
+			<tr>
+			<td>
+			<b><%= link_to p.name, p %></b>
+			</td>
+			<td>
+			<%= p.price %>
+			</td>
+			</tr>
+		<% end %>
+	<% end %>
+</table>
+<%= will_paginate @items %>
