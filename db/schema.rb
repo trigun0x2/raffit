@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130505003402) do
+ActiveRecord::Schema.define(:version => 20130505025711) do
 
   create_table "items", :force => true do |t|
     t.integer  "user_id"
     t.string   "name"
     t.decimal  "price"
     t.integer  "quantity"
-    t.integer  "description"
+    t.string   "description"
     t.integer  "tickthres_min"
     t.integer  "tickthres_max"
     t.integer  "tickbuy_min"
