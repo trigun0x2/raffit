@@ -6,7 +6,7 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/home.css.scss" changelist="f7d88910-faad-4212-a051-8edca175fa31" time="1367722335169" ignored="false" />
     <file path="/show.html.erb" changelist="f7d88910-faad-4212-a051-8edca175fa31" time="1367736552873" ignored="false" />
-    <file path="/items_controller.rb" changelist="f7d88910-faad-4212-a051-8edca175fa31" time="1367738921016" ignored="false" />
+    <file path="/items_controller.rb" changelist="f7d88910-faad-4212-a051-8edca175fa31" time="1367739412759" ignored="false" />
     <file path="/item.rb" changelist="f7d88910-faad-4212-a051-8edca175fa31" time="1367730755093" ignored="false" />
     <file path="/routes.rb" changelist="f7d88910-faad-4212-a051-8edca175fa31" time="1367732379589" ignored="false" />
     <file path="$PROJECT_DIR$/app/views/home/index.html.erb" changelist="f7d88910-faad-4212-a051-8edca175fa31" time="1367737806370" ignored="false" />
@@ -43,7 +43,7 @@
       <file leaf-file-name="items_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/items_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="13" selection-start="2065" selection-end="2065" vertical-scroll-proportion="0.8929188">
+            <state line="62" column="40" selection-start="1837" selection-end="1837" vertical-scroll-proportion="0.82728845">
               <folding />
             </state>
           </provider>
@@ -687,7 +687,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/items_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="13" selection-start="2065" selection-end="2065" vertical-scroll-proportion="0.8929188">
+        <state line="62" column="40" selection-start="1837" selection-end="1837" vertical-scroll-proportion="0.82728845">
           <folding />
         </state>
       </provider>
