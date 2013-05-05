@@ -32,7 +32,7 @@
 	    </ul>   
 		<section class="top-bar-section">
 			<ul class="right">
-				<li class="has-dropdown">
+				<li class="has-dropdown drop">
 					<span class="navtitle">Navigation</span>
 					<ul class="dropdown">
 						<li><%= link_to "View Items", items_path %></li>
@@ -46,6 +46,7 @@
 			        	<%= link_to "Logged in as #{current_user.email}", profile_path %>
 			        </span>
 			        <ul class="dropdown">
+			        	<li><%= link_to "Profile", current_user %></li>
 			        	<li><%= link_to "Log out", logout_path %></li>
 			        </ul>
 			    	</li>
@@ -60,13 +61,11 @@
 
 	<div class="row">
   	<div class="large-12 columns">
-	<% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+	<% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "alert alert-box #{key}") %>
     <% end %>
     <%= yield %>
 	</div>
 	</div>
-    
-    <%= javascript_include_tag "application" %>
   </body>
 </html>

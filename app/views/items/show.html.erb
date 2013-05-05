@@ -2,20 +2,26 @@
 <h1><%= @item.name %></h1>
 <h4><%= link_to @seller, users_path+"/#{@item.user_id}" %></h4>
 
-<% if @item.close_date <= Date.today %>
+<% if @item.winning_ticket %>
     <input value="Closed!" class="button disabled" style="background-color: #777; border-color: transparent; width: 150px;">
 <% else %>
-    <%= button_to "Buy Ticket", {:controller => :items, :action => :buyticket, :id => params[:id]}, {:class => "button", :method => :put, remote: true  , :confirm => "Confirm Buying a Ticket"}  %>
+
+    <%= button_to "Buy Ticket", {:action => :buyticket, :id => params[:id]}, {:class => "button", :method => :put , remote: true , :confirm => "Confirm Buying a Ticket"}  %>
+
     <% if @ticket.length != 0 %>
-    <span class="success label">You currently have <div class="numtick"><%= @ticket.length %></div> <%=  ('ticket').pluralize %>.</span>
+    <span class="success label">You currently have <span class="numtick"><%= @ticket.length %></span> <%=  ('ticket').pluralize %>.</span>
     </p>
     <% end %>
 <% end %>
+
 <ul class="clearing-thumbs" data-clearing>
+
 <% @photos.each do |photo| %>
 	<li><a href="#{ActionController::Base.relative_url_root}/images/#{photo}"><img src="<%= "#{ActionController::Base.relative_url_root}/images/#{photo}" %>" /></a></li>
 <% end %>
 </ul>
+
+
 <p><b>Price:</b> <%= @item.price %></p>
 <p><b>Quantity:</b> <%= @item.quantity %></p>
 <p><b>Description:</b> <%= @item.description %></p>
@@ -25,11 +31,11 @@
 <p><b>Max - Min Tickets Allowed per Person:</b> <%= @item.tickbuy_min %> - <%= @item.tickbuy_max %></p>
 <br />
 <% if @item.close_date <= Date.today %>
-    <p><b>Winning ID:</b>
-    <% if random_num(@item.id) != nil %>
-        <%= random_num(@item.id) %>
-    <% else %>
-        No tickets bought!
-    <% end %>
-    </p>
+    <p><b>Winning ID:</b> <%= random_num(@item.id) %></p>
 <% end %>
+
+<% if current_user.id == 1 %>
+	<p>Winning Ticket: <%= @item.winning_ticket %></p>
+	<%= button_to "Generate", {:action => :random_num1, :id => params[:id]}, {:class => "button", :method => :put , remote: true , :confirm => "Confirm Generate Winning Ticket"}  %>
+<% end %>
+
