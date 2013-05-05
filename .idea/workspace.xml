@@ -6,10 +6,10 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/home.css.scss" changelist="f7d88910-faad-4212-a051-8edca175fa31" time="1367722335169" ignored="false" />
     <file path="/show.html.erb" changelist="f7d88910-faad-4212-a051-8edca175fa31" time="1367739802600" ignored="false" />
-    <file path="/items_controller.rb" changelist="f7d88910-faad-4212-a051-8edca175fa31" time="1367739790312" ignored="false" />
+    <file path="/items_controller.rb" changelist="f7d88910-faad-4212-a051-8edca175fa31" time="1367740378350" ignored="false" />
     <file path="/item.rb" changelist="f7d88910-faad-4212-a051-8edca175fa31" time="1367730755093" ignored="false" />
     <file path="/routes.rb" changelist="f7d88910-faad-4212-a051-8edca175fa31" time="1367732379589" ignored="false" />
-    <file path="$PROJECT_DIR$/app/views/home/index.html.erb" changelist="f7d88910-faad-4212-a051-8edca175fa31" time="1367737806370" ignored="false" />
+    <file path="$PROJECT_DIR$/app/views/home/index.html.erb" changelist="f7d88910-faad-4212-a051-8edca175fa31" time="1367740063403" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +32,7 @@
       <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/items/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="49" selection-start="1285" selection-end="1285" vertical-scroll-proportion="-14.25">
+            <state line="26" column="49" selection-start="1426" selection-end="1426" vertical-scroll-proportion="-14.25">
               <folding>
                 <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
               </folding>
@@ -43,7 +43,7 @@
       <file leaf-file-name="items_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/items_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="23" selection-start="1797" selection-end="1797" vertical-scroll-proportion="0.6148532">
+            <state line="60" column="23" selection-start="1581" selection-end="1581" vertical-scroll-proportion="0.5492228">
               <folding />
             </state>
           </provider>
@@ -64,8 +64,8 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/home.css.scss" />
         <option value="$PROJECT_DIR$/app/models/item.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/items_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/items/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/items_controller.rb" />
       </list>
     </option>
   </component>
@@ -678,7 +678,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/items/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="49" selection-start="1285" selection-end="1285" vertical-scroll-proportion="-14.25">
+        <state line="26" column="49" selection-start="1426" selection-end="1426" vertical-scroll-proportion="-14.25">
           <folding>
             <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
           </folding>
@@ -687,7 +687,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/items_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="23" selection-start="1797" selection-end="1797" vertical-scroll-proportion="0.6148532">
+        <state line="60" column="23" selection-start="1581" selection-end="1581" vertical-scroll-proportion="0.5492228">
           <folding />
         </state>
       </provider>
